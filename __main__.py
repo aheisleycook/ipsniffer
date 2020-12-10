@@ -8,7 +8,7 @@ notCOnnectablbler = []
 this sets to prt the usually hhtp otupund 80
 """
 PORT = 80
-if len(sys.argv) >= 0:
+if len(sys.argv) >= 1:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as t:
         ipselect  = list(sys.argv)
         
@@ -16,13 +16,14 @@ if len(sys.argv) >= 0:
             try:
                 a = t.connect_ex((ip_adress,PORT))
                 isCOnnectable.append(a)
-
+                ipaddress
+            
             except Exception as b:
                 notCOnnectablbler.append(b)
         for active in isCOnnectable:
-            print("connected")
+            print(f"{active} : connected")
         for notactive in notCOnnectablbler:
-            print("not connectrd")
+            print(f"{notactive} not connected")
 else:
     msg = """
     application name:ipsniffer\n
